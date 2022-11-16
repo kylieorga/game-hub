@@ -162,19 +162,33 @@ def rock_paper_scissors():
 def wordGuess():
     import random
 
-    class Name:
-        def yourname(you):
-            name = input("What is your name? ")
-            print("Good Luck, ", name)
+    print("\nWelcome to Word Guessing Game!")
 
-    class Category(Name):
+    class Player: 
+        def __init__(self, Name):
+            self.Name = Name
+
+        def introduce(self):
+            print("Good luck, " + self.Name)
+
+        def goodbye(self):
+            print("\nGood bye, " + self.Name + ". Thank you for playing Word Guessing Game.\n")
+
+    name = input("\nWhat is your name? ")
+    playerOne = Player(name)
+
+    def intro(obj):
+        obj.introduce()
+    intro(playerOne)
+
+
+    class Category():
         def game(cate):
             print()
             print("Category: Technology")
             print()
 
     k = Category()
-    k.yourname()
     k.game()
 
     words = ['phone', 'computer', 'television', 'programming',
@@ -210,6 +224,7 @@ def wordGuess():
             print("\n\nYou Win!")
 
             print("The word is: ", word)
+    
             break
 
         print()
@@ -228,6 +243,10 @@ def wordGuess():
 
             if turns == 0:
                 print("You Lose...")
+
+    def func1(obj):
+        obj.goodbye()
+    func1(playerOne)
 
 
 def sudoku():
